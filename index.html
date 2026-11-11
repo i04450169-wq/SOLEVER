@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLEVER — أداة كيريو</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="rack">
+    <header>
+      <h1>SOLEVER</h1>
+      <p class="sub">أداة أتمتة منصة كيريو — أولى ثانوي</p>
+    </header>
+
+    <main class="terminal">
+      <section class="block">
+        <h2>١. بيانات الدخول</h2>
+        <label>اسم المستخدم
+          <input id="user" type="text" placeholder="username" autocomplete="off">
+        </label>
+        <label>كلمة المرور
+          <input id="pass" type="password" placeholder="••••••••" autocomplete="off">
+        </label>
+      </section>
+
+      <section class="block">
+        <h2>٢. الصف الدراسي</h2>
+        <div class="radio-row">
+          <label class="radio"><input type="radio" name="grade" value="1" checked> أولى ثانوي</label>
+          <label class="radio"><input type="radio" name="grade" value="2"> تانية ثانوي</label>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>٣. الخيارات</h2>
+        <label class="check"><input id="solutions" type="checkbox" checked> جلب الحلول من رابط qureoeg.com/qureo-solutions</label>
+        <label class="check"><input id="headless" type="checkbox"> تشغيل مخفي (headless)</label>
+      </section>
+
+      <div class="actions">
+        <button id="generate">توليد سكريبت Playwright</button>
+        <button id="copy" class="ghost" disabled>نسخ الكود</button>
+      </div>
+
+      <section class="block output-block" id="output-block" hidden>
+        <h2>٤. السكريبت الجاهز</h2>
+        <p class="hint">شغّله على جهازك: <code>pip install playwright && playwright install chromium</code> ثم <code>python qureo_solver.py</code></p>
+        <pre id="output"></pre>
+      </section>
+    </main>
+
+    <footer>
+      <span>$$[MADE BY NullRoutee]$$</span>
+      <span>rack-warm · signal locked</span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
